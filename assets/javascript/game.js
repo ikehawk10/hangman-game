@@ -1,29 +1,29 @@
 
 
+var wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malware", "phishing", "spoofing", "virus", "whitehat", "attack"];
 
-
-var wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malware", "phishing", "spoofing", "virus", "whitehat"];
 var randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
 
+var z = document.getElementById('subject');
+var blanks = [];
+
+z.innerHTML = randomWord;
 var s;
-var count = 0;
-var answerArray = [];
 
-function setUp() {
-	for (var i = 0; i < randomWord.length; i++) {
-		answerArray[i] = "_";
-	}
+function newWord() {
+  for (var i = 0; i < randomWord.length; i++) {
+    blanks[i] = "*";
+  }
+   s = blanks.join(" ");
+  z.innerHTML = s;
+}
 
-	s = answerArray.join(" ");
-	document.getElementById('guessNumber').innerHTML = s;
-};
-
+newWord();
 
 
 
-
-
-
+var guessNumber = document.getElementById('guessesLeft');
+guessNumber.innerHTML = parseInt(randomWord.length / 3 * 2);
 
 
 

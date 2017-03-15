@@ -25,17 +25,22 @@
 </head>
 <body>
 	<section class="jumbotron jumbotron1">
-		<div class="containerBody text-center">
-		<h1 class="gameTitle">H<span class="special">a</span>cker Hangman</h1>
-		<p class="description"><small>A word-guessing game that uses hacker vocabulary</small></p>
+		<div class="containerBody text-center main-container">
+			<h1 class="gameTitle">H<span class="special">a</span>cker Hangman</h1>
+			<p class="description"><small>A word-guessing game that uses hacker vocabulary</small></p>
 		</div>
 	</section>
 	<section class="gameBody">
-		<div class="jumbotron jumbotron2"
+		<div class="jumbotron jumbotron2">
 		<div class="containerBody">
+		<div class="row">
+				<div class="col-md-12 text-center hidden-answer">
+					<span id="subject"></span>
+				</div>
+			</div>
 			<div class="row"> <!-- row -->
 				<div class="col-md-3 col-md-offset-1 text-center">
-					<p>Guesses Remaing:</p><p><span id="guessesLeft">10</span></p>
+					<p>Guesses Remaining:</p><p><span id="guessesLeft"></span></p>
 				</div>
 				<div class="col-md-5 col-md-offset-1">
 					<div class="row">
@@ -70,11 +75,7 @@
 						</div>
 					</div>
 				</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<span id="subject">placeholder for keyword</span>
-				</div>
-			</div>
+			
 		</div> <!-- /container -->
 	</section>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
