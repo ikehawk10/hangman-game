@@ -5,45 +5,66 @@ var wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malwar
 
 var randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
 
-var z = document.getElementById('subject');
-var guessNumber = document.getElementById('guessesLeft');
+var blankWord = document.getElementById('subject');
+var guessesLeft = document.getElementById('guessesLeft');
+var guessNumber = 10;
+guessesLeft.innerHTML = guessNumber;
 var blanks = [];
 
-z.innerHTML = randomWord;
+blankWord.innerHTML = randomWord;
 var s;
+
+var randomWordArr = randomWord.split('');
+
+
+
+
 
 //functions ========================
 
 function newWord() {
+
   for (var i = 0; i < randomWord.length; i++) {
-    blanks[i] = "*";
+    blanks[i] = "<span>*</span>";
   }
    s = blanks.join(" ");
-  z.innerHTML = s;
+  blankWord.innerHTML = s ;
 }
 
-newWord();
+
+//Get the individual letters from the word
+//Test the user's choice again the letters from the word
+function testWord () {
+	for (var i = 0; i < randomWord.length; i++) {
+	}
+}
+
+
+
 
 //when keyboard keys are clicked, log the id value
 var keyboardKeys = document.querySelectorAll('.keyboard-keys');
 var keyNumber = "";
 
-for (var i = 0; i <keyboardKeys.length; i++) {
-	keyboardKeys[i].addEventListener('click', function() {
-		console.log('clicked!');
-		keyNumber = this.getAttribute("id");
 
-    	for (var i = 0; i < randomWord.length; i++) {
-			if (keyNumber === randomWord[i]) {
-				console.log("matched " + keyNumber);
-				this.classList.add('guessed');
-				z.innerHTML = keyNumber;
+	for (var i = 0; i <keyboardKeys.length; i++) {
+		keyboardKeys[i].addEventListener('click', function() {
+			keyNumber = this.getAttribute("id");
+			
 
+	    	for (var i = 0; i < randomWordArr.length; i++) {
+				if (keyNumber === randomWord[i]) {
+					console.log("matched " + keyNumber);
+					this.classList.add('guessed');
+					document.getElementById('subject').children[i].innerHTML = keyNumber;
+
+
+
+				}
 			}
-}
 
-	})
-}
+		})
+	}
 
 
 document.getElementById('reset-button').addEventListener('click', function() {
@@ -55,7 +76,12 @@ document.getElementById('reset-button').addEventListener('click', function() {
 
 		z.innerHTML = randomWord;
 		var s;
-		newWord();
+		  for (var i = 0; i < randomWord.length; i++) {
+	    blanks[i] = "*";
+	  }
+	   s = blanks.join(" ");
+	  blankWord.innerHTML = s;
+	
 	});
 
 
@@ -67,18 +93,15 @@ document.getElementById('surrender').addEventListener('click', function() {
 
 		z.innerHTML = randomWord;
 		var s;
-		randomWord.remove('guessed');
-		newWord();
 	});
 
-// document.getElementById("myBtn").addEventListener("click", function(){
-//     document.getElementById("demo").innerHTML = "Hello World";
-// });
+
+newWord();
 
 
 
 
-guessNumber.innerHTML = parseInt(randomWord.length / 3 * 2);
+
 
 
 
