@@ -16,10 +16,6 @@ var s;
 
 var randomWordArr = randomWord.split('');
 
-
-
-
-
 //functions ========================
 
 function newWord() {
@@ -39,9 +35,6 @@ function testWord () {
 	}
 }
 
-
-
-
 //when keyboard keys are clicked, log the id value
 var keyboardKeys = document.querySelectorAll('.keyboard-keys');
 var keyNumber = "";
@@ -53,15 +46,12 @@ var keyNumber = "";
 			
 
 	    	for (var i = 0; i < randomWordArr.length; i++) {
-				if (keyNumber === randomWord[i]) {
-					console.log("matched " + keyNumber);
-					this.classList.add('guessed');
-					document.getElementById('subject').children[i].innerHTML = keyNumber;
-
-
-
+					if (keyNumber === randomWord[i]) {
+						console.log("matched " + keyNumber);
+						this.classList.add('guessed');
+						document.getElementById('subject').children[i].innerHTML = keyNumber;
+					}
 				}
-			}
 
 		})
 	}
