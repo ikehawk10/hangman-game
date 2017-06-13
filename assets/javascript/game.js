@@ -50,17 +50,13 @@ for (var i = 0; i <keyboardKeys.length; i++) {
 
 
 document.getElementById('reset-button').addEventListener('click', resetWord);
-
-	
 document.getElementById('surrender').addEventListener('click', function() {
-
-		var z = document.getElementById('subject');
-		var guessNumber = document.getElementById('guessesLeft');
-		var blanks = [];
-
-		z.innerHTML = randomWord;
-		var s;
-	});
+	var z = document.getElementById('subject');
+	var guessNumber = document.getElementById('guessesLeft');
+	var blanks = [];
+	z.innerHTML = randomWord;
+	var s;
+});
 
 newWord();
 
