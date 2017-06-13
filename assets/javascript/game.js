@@ -14,7 +14,6 @@ var wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malwar
 
 guessesLeft.innerHTML = guessNumber;
 blankWord.innerHTML = randomWord;
-console.log(randomWordArr);
 
 
 //functions ========================
@@ -49,7 +48,7 @@ function checkClick(){
 
 
 
-//generate new word
+//generate new word on reset
 function resetWord(){
 	newWord();	
 	console.log(randomWord);
@@ -59,6 +58,10 @@ function resetWord(){
 function surrender(){
 	blankWord.innerHTML = randomWord;
 	guessesLeft.innerHTML = "<h3>Better Luck Next Time!</h3>";
+}
+
+function winner(){
+	guessesLeft.innerHTML = "<h3>You won!</h3>";
 }
 
 // //Add event listener on keyboard keys
