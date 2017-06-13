@@ -19,6 +19,7 @@ blankWord.innerHTML = randomWord;
 
 function newWord() {
 	randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
+	blanks = [];
   for (var i = 0; i < randomWord.length; i++) {
     blanks[i] = "<span>*</span>";
   }
