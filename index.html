@@ -18,82 +18,80 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<section class="jumbotron jumbotron1">
+	<section class="jumbotron2">
 		<div class="containerBody text-center main-container">
 			<h1 class="gameTitle">H<span class="special">a</span>cker Hangman</h1>
 			<p class="description"><small>A word-guessing game that uses hacker vocabulary</small></p>
 		</div>
-	</section>
-	<section class="gameBody">
-		<div class="jumbotron jumbotron2">
-		<div class="containerBody">
-		<div class="row">
-				<div class="col-md-11 col-md-offset-1 text-center hidden-answer">
-					<span id="subject"></span>
-				</div>
-			</div>
-			<div class="row main-content"> <!-- row -->
-				<div class="col-md-3 col-md-offset-5 text-center">
-					<p>Guesses Remaining:</p><p><span id="guessesLeft">	</span></p>
-				</div>
-				<div class="col-md-5 col-md-offset-1">
-				</div>
-			</div>
-					<div class="keyboard">
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<button class="holder"><img src="keyboard-keys/Q.png" class="keyboard-keys" id="q"></button>
-								<button class="holder"><img src="keyboard-keys/W.png" class="keyboard-keys" id="w"></button>
-								<button class="holder"><img src="keyboard-keys/E.png" class="keyboard-keys" id="e"></button>
-								<button class="holder"><img src="keyboard-keys/R.png" class="keyboard-keys" id="r"></button>
-								<button class="holder"><img src="keyboard-keys/T.png" class="keyboard-keys" id="t"></button>
-								<button class="holder"><img src="keyboard-keys/Y.png" class="keyboard-keys" id="y"></button>
-								<button class="holder"><img src="keyboard-keys/U.png" class="keyboard-keys" id="u"></button>
-								<button class="holder"><img src="keyboard-keys/I.png" class="keyboard-keys" id="i"></button>
-								<button class="holder"><img src="keyboard-keys/O.png" class="keyboard-keys" id="o"></button>
-								<button class="holder"><img src="keyboard-keys/P.png" class="keyboard-keys" id="p"></button>
-							</div>
+		<section class="gameBody">
+			<div class="jumbotron jumbotron2">
+				<div class="containerBody">
+					<div class="row">
+						<div class="col-md-12 text-center hidden-answer">
+							<span id="subject"></span>
 						</div>
-						<div class="row">
-							<div class="col-md-11 col-md-offset-1">
-								<button class="holder"><img src="keyboard-keys/A.png" class="keyboard-keys" id="a"></button>
-								<button class="holder"><img src="keyboard-keys/S.png" class="keyboard-keys" id="s"></button>
-								<button class="holder"><img src="keyboard-keys/D.png" class="keyboard-keys" id="d"></button>
-								<button class="holder"><img src="keyboard-keys/F.png" class="keyboard-keys" id="f"></button>
-								<button class="holder"><img src="keyboard-keys/G.png" class="keyboard-keys" id="g"></button>
-								<button class="holder"><img src="keyboard-keys/H.png" class="keyboard-keys" id="h"></button>
-								<button class="holder"><img src="keyboard-keys/J.png" class="keyboard-keys" id="j"></button>
-								<button class="holder"><img src="keyboard-keys/K.png" class="keyboard-keys" id="k"></button>
-								<button class="holder"><img src="keyboard-keys/L.png" class="keyboard-keys" id="l"></button>
-							</div>
+					</div>
+					<div class="row main-content"> <!-- row -->
+						<div class="col-md-12 text-center">
+							<p>Guesses Remaining:</p><p><span id="guessesLeft">	</span></p>
 						</div>
-						<div class="row">
-							<div class="col-md-10 col-md-offset-2">
+						<div class="col-md-12">
+						</div>
+					</div>
+						<div class="keyboard">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button class="holder"><img src="keyboard-keys/Q.png" class="keyboard-keys" id="q"></button>
+									<button class="holder"><img src="keyboard-keys/W.png" class="keyboard-keys" id="w"></button>
+									<button class="holder"><img src="keyboard-keys/E.png" class="keyboard-keys" id="e"></button>
+									<button class="holder"><img src="keyboard-keys/R.png" class="keyboard-keys" id="r"></button>
+									<button class="holder"><img src="keyboard-keys/T.png" class="keyboard-keys" id="t"></button>
+									<button class="holder"><img src="keyboard-keys/Y.png" class="keyboard-keys" id="y"></button>
+									<button class="holder"><img src="keyboard-keys/U.png" class="keyboard-keys" id="u"></button>
+									<button class="holder"><img src="keyboard-keys/I.png" class="keyboard-keys" id="i"></button>
+									<button class="holder"><img src="keyboard-keys/O.png" class="keyboard-keys" id="o"></button>
+									<button class="holder"><img src="keyboard-keys/P.png" class="keyboard-keys" id="p"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-11 col-md-offset-1">
+									<button class="holder"><img src="keyboard-keys/A.png" class="keyboard-keys" id="a"></button>
+									<button class="holder"><img src="keyboard-keys/S.png" class="keyboard-keys" id="s"></button>
+									<button class="holder"><img src="keyboard-keys/D.png" class="keyboard-keys" id="d"></button>
+									<button class="holder"><img src="keyboard-keys/F.png" class="keyboard-keys" id="f"></button>
+									<button class="holder"><img src="keyboard-keys/G.png" class="keyboard-keys" id="g"></button>
+									<button class="holder"><img src="keyboard-keys/H.png" class="keyboard-keys" id="h"></button>
+									<button class="holder"><img src="keyboard-keys/J.png" class="keyboard-keys" id="j"></button>
+									<button class="holder"><img src="keyboard-keys/K.png" class="keyboard-keys" id="k"></button>
+									<button class="holder"><img src="keyboard-keys/L.png" class="keyboard-keys" id="l"></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-10 col-md-offset-2">
 
-								<button class="holder"><img src="keyboard-keys/Z.png" class="keyboard-keys" id="z"></button>
-								<button class="holder"><img src="keyboard-keys/X.png" class="keyboard-keys" id="x"></button>
-								<button class="holder"><img src="keyboard-keys/C.png" class="keyboard-keys" id="c"></button>
-								<button class="holder"><img src="keyboard-keys/V.png" class="keyboard-keys" id="v"></button>
-								<button class="holder"><img src="keyboard-keys/B.png" class="keyboard-keys" id="b"></button>
-								<button class="holder"><img src="keyboard-keys/N.png" class="keyboard-keys" id="n"></button>
-								<button class="holder"><img src="keyboard-keys/M.png" class="keyboard-keys" id="m"></button>
-								
-								
+									<button class="holder"><img src="keyboard-keys/Z.png" class="keyboard-keys" id="z"></button>
+									<button class="holder"><img src="keyboard-keys/X.png" class="keyboard-keys" id="x"></button>
+									<button class="holder"><img src="keyboard-keys/C.png" class="keyboard-keys" id="c"></button>
+									<button class="holder"><img src="keyboard-keys/V.png" class="keyboard-keys" id="v"></button>
+									<button class="holder"><img src="keyboard-keys/B.png" class="keyboard-keys" id="b"></button>
+									<button class="holder"><img src="keyboard-keys/N.png" class="keyboard-keys" id="n"></button>
+									<button class="holder"><img src="keyboard-keys/M.png" class="keyboard-keys" id="m"></button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-5 col-md-offset-1 text-right hidden-answer">
-					<button class="btn btn-lg" id="reset-button">New Word</button>
-				</div>
-				<div class="col-md-5 col-md-offset-1 text-left hidden-answer">
-					<button class="btn btn-lg btn-danger" id="surrender">Give Up!</button>
-				</div>
-
-		</div> <!-- /container -->
+				<div class="row">
+					<div class="col-md-5 col-md-offset-1 text-right hidden-answer">
+						<button class="btn btn-lg" id="reset-button">New Word</button>
+					</div>
+					<div class="col-md-5 col-md-offset-1 text-left hidden-answer">
+						<button class="btn btn-lg btn-danger" id="surrender">Give Up!</button>
+					</div>
+			</div> <!-- /container -->
+		</section>
 	</section>
+	
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>

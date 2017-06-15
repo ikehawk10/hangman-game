@@ -2,21 +2,13 @@ body {
 	background-color: black;
 }
 
-.jumbotron1 {
-	background: url('../images/background-img.jpg') center center;
-	width: 100%;
-    height: 700px;
-    background-size: cover;
-    overflow: hidden;
-}
-
 .jumbotron2 {
 	background: url('../images/anonymous-background.jpg') center center;
 	width: 100%;
     height: 100%;
     background-size: cover;
     overflow: hidden;
-    padding-top: 100px;
+/*    padding-top: 100px;*/
 }
 .keyboard {
 	width: 688px;
