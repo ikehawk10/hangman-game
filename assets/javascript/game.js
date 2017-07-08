@@ -1,7 +1,7 @@
 
 
 // Defined variables ===============
-var wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malware", "phishing", "spoofing", "virus", "whitehat", "attack"],
+let wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malware", "phishing", "spoofing", "virus", "whitehat", "attack"],
 		randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)],
 		blankWord = document.getElementById('subject'),
 		guessesLeft = document.getElementById('guessesLeft'),
@@ -18,7 +18,7 @@ blankWord.innerHTML = randomWord;
 
 //functions ========================
 
-function newWord() {
+ function newWord() {
 	randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
 	blanks = [];
 	guessNumber = 10;
@@ -65,7 +65,7 @@ function winner(){
 }
 
 // //Add event listener on keyboard keys
-for (var i = 0; i <keyboardKeys.length; i++) {
+for (let i = 0; i <keyboardKeys.length; i++) {
 	keyboardKeys[i].addEventListener('click', checkClick);
 }
 
@@ -75,6 +75,7 @@ document.getElementById('surrender').addEventListener('click', surrender);
 
 //start with the first word
 newWord();
+
 
 
 
