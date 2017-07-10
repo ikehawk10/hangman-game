@@ -15,21 +15,20 @@ let wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malwar
 guessesLeft.innerHTML = guessNumber;
 blankWord.innerHTML = randomWord;
 
+ //generate new word and replace each letter with an astricks
+	function newWord() {
+		randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
+		blanks = [];
+		guessNumber = 10;
+		for (var i = 0; i < randomWord.length; i++) {
+		  blanks[i] = "<span>*</span>";
+		}
+		astricks = blanks.join(" ");
+		guessesLeft.innerHTML = guessNumber;
+		return blankWord.innerHTML = astricks;
+	}
 
-//functions ========================
-
- function newWord() {
-	randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
-	blanks = [];
-	guessNumber = 10;
-  for (var i = 0; i < randomWord.length; i++) {
-    blanks[i] = "<span>*</span>";
-  }
-  astricks = blanks.join(" ");
-  guessesLeft.innerHTML = guessNumber;
-  return blankWord.innerHTML = astricks;
-}
-
+//check if user selected a correct letter
 function checkClick(){
 	keyNumber = this.getAttribute("id");
 	guessNumber--;
@@ -44,9 +43,6 @@ function checkClick(){
 		}
 	} return guessesLeft.innerHTML = guessNumber;
 }
-
-
-
 
 //generate new word on reset
 function resetWord(){
@@ -65,9 +61,9 @@ function winner(){
 }
 
 // //Add event listener on keyboard keys
-for (let i = 0; i <keyboardKeys.length; i++) {
-	keyboardKeys[i].addEventListener('click', checkClick);
-}
+	keyboardKeys.forEach(key => {
+		key.addEventListener('click', checkClick);
+	});
 
 //add event listeners to buttons
 document.getElementById('reset-button').addEventListener('click', resetWord);
