@@ -12,7 +12,9 @@ let wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malwar
 		keyboardKeys = document.querySelectorAll('.keyboard-keys'),
 		keyNumber = "";
 
+//display the number of guesses
 guessesLeft.innerHTML = guessNumber;
+//display the random word
 blankWord.innerHTML = randomWord;
 
  //generate new word and replace each letter with an astricks
@@ -20,6 +22,7 @@ blankWord.innerHTML = randomWord;
 		randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)]
 		blanks = [];
 		guessNumber = 10;
+		//replaces each letter with an astricks
 		for (var i = 0; i < randomWord.length; i++) {
 		  blanks[i] = "<span>*</span>";
 		}
@@ -47,7 +50,6 @@ function checkClick(){
 //generate new word on reset
 function resetWord(){
 	newWord();	
-	console.log(randomWord);
 }
 
 //reveal current word
