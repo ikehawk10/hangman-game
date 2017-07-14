@@ -1,16 +1,11 @@
-
-
 // Defined variables ===============
 let wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malware", "phishing", "spoofing", "virus", "whitehat", "attack"],
 		randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)],
 		blankWord = document.getElementById('subject'),
 		guessesLeft = document.getElementById('guessesLeft'),
 		guessNumber = 10,
-		blanks = [],
-		astricks,
 		randomWordArr = randomWord.split(''),
-		keyboardKeys = document.querySelectorAll('.keyboard-keys'),
-		keyNumber = "";
+		keyboardKeys = document.querySelectorAll('.keyboard-keys');
 
 //display the number of guesses
 guessesLeft.innerHTML = guessNumber;
@@ -26,14 +21,14 @@ blankWord.innerHTML = randomWord;
 		for (var i = 0; i < randomWord.length; i++) {
 		  blanks[i] = "<span>*</span>";
 		}
-		astricks = blanks.join(" ");
+		let astricks = blanks.join(" ");
 		guessesLeft.innerHTML = guessNumber;
 		return blankWord.innerHTML = astricks;
 	}
 
 //check if user selected a correct letter
 function checkClick(){
-	keyNumber = this.getAttribute("id");
+	let keyNumber = this.getAttribute("id");
 	guessNumber--;
 	for (var i = 0; i < randomWordArr.length; i++) {
 		if (keyNumber === randomWord[i]) {
