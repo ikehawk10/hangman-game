@@ -37,7 +37,6 @@ function checkClick(){
 	guessNumber--;
 	for (var i = 0; i < randomWordArr.length; i++) {
 		if (keyNumber === randomWord[i]) {
-			console.log("matched " + keyNumber);
 			guessNumber++;
 			blankWord.children[i].innerHTML = keyNumber;
 		}
