@@ -20,6 +20,12 @@ body {
 	margin: 0 auto;
 }
 
+input {
+	margin: 0 auto;
+	width: 500px;
+
+}
+
 .main-container {
 	background: black;
 	width: 650px;

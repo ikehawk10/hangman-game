@@ -6,6 +6,7 @@ let wordsArray = ["anonymous", "backdoor", "blackhat", "botnet", "ddos", "malwar
 		guessNumber = 10,
 		randomWordArr = randomWord.split(''),
 		keyboardKeys = document.querySelectorAll('.keyboard-keys');
+		console.log(randomWordArr)
 
 //display the number of guesses
 guessesLeft.innerHTML = guessNumber;
@@ -18,7 +19,7 @@ blankWord.innerHTML = randomWord;
 		blanks = [];
 		guessNumber = 10;
 		//replaces each letter with an astricks
-		for (var i = 0; i < randomWord.length; i++) {
+		for (let i = 0; i < randomWord.length; i++) {
 		  blanks[i] = "<span>*</span>";
 		}
 		let astricks = blanks.join(" ");
@@ -30,7 +31,7 @@ blankWord.innerHTML = randomWord;
 function checkClick(){
 	let keyNumber = this.getAttribute("id");
 	guessNumber--;
-	for (var i = 0; i < randomWordArr.length; i++) {
+	for (let i = 0; i < randomWordArr.length; i++) {
 		if (keyNumber === randomWord[i]) {
 			guessNumber++;
 			blankWord.children[i].innerHTML = keyNumber;
@@ -56,6 +57,14 @@ function winner(){
 	guessesLeft.innerHTML = "<h3>You won!</h3>";
 }
 
+function letterGuess(e) {
+	let guess = e.target.value
+	if ( randomWordArr.includes(guess)) {
+		alert("hit!")
+	}
+	e.target.value = ""
+}
+
 // //Add event listener on keyboard keys
 	keyboardKeys.forEach(key => {
 		key.addEventListener('click', checkClick);
@@ -64,6 +73,7 @@ function winner(){
 //add event listeners to buttons
 document.getElementById('reset-button').addEventListener('click', resetWord);
 document.getElementById('surrender').addEventListener('click', surrender);
+document.getElementById('input').addEventListener('keyup', letterGuess)
 
 //start with the first word
 newWord();
