@@ -42,7 +42,7 @@ function loserMessage(){
 }
 
 function resetGuesses() {
-	guessNumber = 10;
+	guessNumber = randomWord.length;
 	numberDisplay.innerHTML = guessNumber;
 }
 
@@ -65,6 +65,7 @@ function winner(){
 
 function lostGame(){
 	message.innerHTML = `Sorry, you ran out of turns! Better luck next time.`;
+	showWord(randomWord)
 	freezeGame()
 }
 
@@ -132,7 +133,7 @@ function showWord(word){
 //add event listeners to buttons
 resetButton.addEventListener('click', newWord);
 surrenderButton.addEventListener('click', surrender);
-inputField.addEventListener('keyup', letterGuess)
+inputField.addEventListener('input', letterGuess)
 
 
 newWord()
