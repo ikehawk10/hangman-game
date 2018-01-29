@@ -5,7 +5,7 @@ let guessNumber, randomWord, randomWordArr, hiddenWord
 let attemptedGuesses = []
 let lettersGuessed = document.getElementById('lettersGuessed');
 let numberDisplay = document.getElementById('guessesLeft');
-let chosenWord = document.getElementById('chosenWord')
+let chosenWord = document.getElementById('chosen-word')
 let message = document.getElementById('message');
 let guessesLeft = document.getElementById('guessesLeft');
 let resetButton = document.getElementById('reset-button');
@@ -27,6 +27,7 @@ function generateRandomWord(){
 	randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
 	hideWord(randomWord);
 	console.log(randomWord)
+	return randomWord;
 }
 
 //reset the message content to nothing
@@ -52,28 +53,29 @@ function surrender(){
 }
 
 function winner(){
-	message.innerHTML = "<h3>You won!</h3>";
+	freezeGame()
 }
 
 function lostGame(){
-	message.innerHTML = "You ran out of guesses! You Lose!"
+	message.innerHTML = `Sorry, you ran out of turns! Better luck next time.`;
+	freezeGame()
 }
 
 function letterGuess(e) {
-	let guess = e.target.value
-	attemptedGuesses.push(guess)
+	let letterGuessed = e.target.value
 	generateWordArray()
-	if ( randomWordArr.includes(guess) ) {
-		console.log("hit!")
-		correctGuess(guess)
-	} else (
+	if (!randomWordArr.includes(letterGuessed)) {
+		if (!attemptedGuesses.includes(letterGuessed)) {
+		attemptedGuesses.push(letterGuessed)
 		wrongGuess()
-	)
-
-	if ( guessNumber <= 0 ){
-		lostGame()
+		}
 	}
 
+	correctGuess(letterGuessed)
+
+	if (guessNumber <= 0){
+		lostGame()
+	}
 
 	e.target.value = ""
 	guessesLeft.innerHTML = guessNumber
@@ -82,16 +84,15 @@ function letterGuess(e) {
 }
 
 function correctGuess(guess){
-	for ( var i = 0; i < randomWordArr.length; i++ ){
-			if ( randomWordArr[i] === guess ){
+	for (let i = 0; i < randomWordArr.length; i++){
+			if (randomWordArr[i] === guess){
 				hiddenWord[i] = randomWordArr[i]
 				chosenWord.innerHTML = hiddenWord.join('')
 			}
 		}
 	if (hiddenWord.join('') === randomWord) {
 		message.innerHTML = `You won with ${guessNumber} guesses remaining! Great job!`;
-		freezeGame()
-
+		winner()
 	}
 }
 
@@ -120,14 +121,6 @@ function hideWord(word){
 function showWord(word){
 	chosenWord.innerHTML = word;
 }
-
-//check to see whether the inputed letter has already been guessed
-function testLetter(letter){
-	if ( attemptedGuesses.includes(letter)) {
-		return true
-	}
-}
-
 
 //add event listeners to buttons
 resetButton.addEventListener('click', newWord);

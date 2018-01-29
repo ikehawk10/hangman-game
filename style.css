@@ -2,17 +2,14 @@ body {
 	background-color: black;
 }
 
-.jumbotron2 {
-	background: url('../images/anonymous-background.jpg') center center;
-	width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
-/*    padding-top: 100px;*/
+p {
+	color: white;
 }
-.keyboard {
-	width: 688px;
-	margin: 0 auto;
+
+h1 {
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 62px;
 }
 
 .containerBody {
@@ -26,16 +23,22 @@ input {
 
 }
 
+#chosen-word {
+	color: #2EA700;
+	font-family: 'Orbitron', sans-serif;
+}
+
 .main-container {
 	background: black;
 	width: 650px;
 	padding: 30px 20px;
 }
 
-
-p {
-	color: white;
+#letters-guessed {
+	color: #2EA700;
+	font-family: 'Orbitron', sans-serif;
 }
+
 #guessesLeft {
 	font-size: 100px;
 	font-family: 'Orbitron', sans-serif;
@@ -44,12 +47,6 @@ p {
 
 .special {
 	color: #2EA700;
-}
-
-h1 {
-	color: white !important;
-	font-family: 'Orbitron', sans-serif;
-	font-size: 62px !important;
 }
 
 .description {
