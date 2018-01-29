@@ -34,7 +34,7 @@ input {
 	padding: 30px 20px;
 }
 
-#letters-guessed {
+#lettersGuessed {
 	color: #2EA700;
 	font-family: 'Orbitron', sans-serif;
 }
@@ -63,42 +63,13 @@ input {
 	color: #2EA700;
 	font-family: 'Orbitron', sans-serif;
 }
-
-.guessed {
-	visibility: hidden;
+#surrender { 
+	display: inline;
+  float: right;
 }
 
-.holder {
-	background-color: black;
-	border: none;
 
-}
-
-#reset-button {
-	background-color: #2EA700;
-	color: black;
-	font-weight: bold;
-}
-
-#reset-button:hover {
-	background-color: #2EA700; 
-	border: black;
-	color: white;
-	
-}
 
 .main-content {
 	margin-bottom: 50px;
-}
-
-#reset-button:active {
-	background-color: #2EA700; 
-	border: black;
-	
-}
-
-#reset-button:focus {
-	background-color: #2EA700; 
-	border: black;
-	
 }

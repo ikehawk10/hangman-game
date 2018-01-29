@@ -18,8 +18,10 @@ function newWord() {
 	generateRandomWord()
 	newMessage()
 	resetGuesses()
+	emptyLettersGuessed()
 	surrenderButton.style.display = 'block';
-	inputField.disabled = false
+	inputField.disabled = false;
+
 	return randomWord
 }
 
@@ -42,6 +44,11 @@ function loserMessage(){
 function resetGuesses() {
 	guessNumber = 10;
 	numberDisplay.innerHTML = guessNumber;
+}
+
+function emptyLettersGuessed() {
+	lettersGuessed.innerHTML = "";
+	attemptedGuesses = [];
 }
 
 
